@@ -9,6 +9,7 @@
 % Bessel function to a single function R(x,lambda) to avoid convergence
 % problem at large kperp
 % 25-02-13 08:08 use Ronnmark83's RYLA to fast calcualte R & dR
+% 25-07-24 15:07 fixed bug of Xsn_yy term a Rsj should be dRsj
 
 % 2021-08-28 17:00 modified from previous (2013-06-17) pdrko.m
 function f=fDR(kx) % DR, only Maxwellian
@@ -73,7 +74,8 @@ for s=1:S
         Xsn_xy=1i*dRsj/xsj;
         Xsn_xz=sqrt(2)*a*czj(j)/xsj*Rsj;
         Xsn_yx=-Xsn_xy;
-        Xsn_yy=Rsj-2*b/xsj^2*Rsj;
+        % Xsn_yy=Rsj-2*b/xsj^2*Rsj; % wrong
+        Xsn_yy=Rsj-2*b/xsj^2*dRsj; % 25-07-24 15:07 fixed bug
         Xsn_yz=-1i*sqrt(2)*a*czj(j)/xsj^2*dRsj;
         Xsn_zx=Xsn_xz;
         Xsn_zy=-Xsn_yz;
