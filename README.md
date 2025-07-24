@@ -10,3 +10,7 @@ Ref: H. S. Xie, Developing a Linear Fluid Plasma Model with Accurate Kinetic Ber
 -em3d_Lpole.m, The fluid matrix method code to solve kperp. 
 
 -bonk/.., The conventional root finding codes to solve kperp.
+
+
+Huasheng XIE (huashengxie@gmail.com, ENN)
+10:20 2025/7/24
